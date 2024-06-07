@@ -52,6 +52,16 @@
             "projectName": "searchservice",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PostserviceApplication<postservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fatima.postservice.PostserviceApplication",
+            "projectName": "postservice",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
