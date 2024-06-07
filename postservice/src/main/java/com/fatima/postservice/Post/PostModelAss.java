@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-// import com.fatima.postservice.Controllers.PostController;
+import com.fatima.postservice.Controllers.PostController;
 import com.fatima.postservice.Comment.Comment;
 import com.fatima.postservice.Like.Like;
 import com.fatima.postservice.Share.Share;
@@ -38,18 +38,17 @@ public class PostModelAss implements RepresentationModelAssembler<Post, EntityMo
     @Override
     public EntityModel<Post> toModel(Post post) {
        
-       return EntityModel.of(post);
-      //  ,
-      //           linkTo(methodOn(PostController.class).sharePost(post.getPostId(),null)).withRel("createShare"),
-      //           linkTo(methodOn(PostController.class).createComment(null ,post.getPostId())).withRel("createComment"),
-      //         linkTo(methodOn(PostController.class).createLikePost(null ,post.getPostId())).withRel("create like"),
-      //         linkTo(methodOn(PostController.class).findByLikesContainsUser()).withRel("is liked"),
-      //         linkTo(methodOn(PostController.class).numberComment(post.getPostId())).withRel("number of comment"),
-      //         linkTo(methodOn(PostController.class).numberLike(post.getPostId())).withRel("number of like"),
-      //         linkTo(methodOn(PostController.class).checkIfUserLikedPost(post.getPostId())).withRel("If User Liked Post"),
-      //         linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("the post's likes"),
+       return EntityModel.of(post,
+                linkTo(methodOn(PostController.class).sharePost(post.getPostId(),null)).withRel("createShare"),
+                linkTo(methodOn(PostController.class).createComment(null ,post.getPostId())).withRel("createComment"),
+              linkTo(methodOn(PostController.class).createLikePost(null ,post.getPostId())).withRel("create like"),
+              linkTo(methodOn(PostController.class).findByLikesContainsUser()).withRel("is liked"),
+              linkTo(methodOn(PostController.class).numberComment(post.getPostId())).withRel("number of comment"),
+              linkTo(methodOn(PostController.class).numberLike(post.getPostId())).withRel("number of like"),
+              linkTo(methodOn(PostController.class).checkIfUserLikedPost(post.getPostId())).withRel("If User Liked Post"),
+              linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("the post's likes"),
 
-      //          linkTo(methodOn(PostController.class).getRandomComments(post.getPostId())).withRel("the post's comment"));
+               linkTo(methodOn(PostController.class).getRandomComments(post.getPostId())).withRel("the post's comment"));
 
 
     }
@@ -59,16 +58,16 @@ public class PostModelAss implements RepresentationModelAssembler<Post, EntityMo
              User user=null;
           String jwt = parseJwt(request);
        
-        //    if (userHasPermissionToDeletePost(post.getPostId(),user.getId())){
-        //    return EntityModel.of(post,
-        //   linkTo(methodOn(PostController.class).getAllPostLikes(post.getPostId())).withRel("the post's like"),
-        //   linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"),
-        //   linkTo(methodOn(PostController.class).deleteById(post.getPostId())).withRel("delete your post"));
-        // }else{    return EntityModel.of(post,
-        //            linkTo(methodOn(PostController.class).getAllPostLikes(post.getPostId())).withRel("the post's like"),
-        //            linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"));
-        //    }
-    return null;
+           if (userHasPermissionToDeletePost(post.getPostId(),user.getId())){
+           return EntityModel.of(post,
+          linkTo(methodOn(PostController.class).getAllPostLikes(post.getPostId())).withRel("the post's like"),
+          linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"),
+          linkTo(methodOn(PostController.class).deleteById(post.getPostId())).withRel("delete your post"));
+        }else{    return EntityModel.of(post,
+                   linkTo(methodOn(PostController.class).getAllPostLikes(post.getPostId())).withRel("the post's like"),
+                   linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"));
+           }
+    
           
 
         } 
@@ -80,21 +79,20 @@ public class PostModelAss implements RepresentationModelAssembler<Post, EntityMo
              
                   String username = jwtUtils.getUserNameFromJwtToken(jwt);
              
-             Post post = like.getPost();
+             Post post = like.post;
      
-            //  if ( UserServiceFeignClient.getUserByUserId(like.getUserId()) ==UserServiceFeignClient.getUsersByUsername(username)){
-             return EntityModel.of(like);
-        //      ,
-        //      linkTo(methodOn(PostController.class).findById(post.getPostId())).withRel("the post "),
-        //    // linkTo(methodOn(PostController.class).getAllPostLikes(like.getPostId())).withRel("the post's like"),
-        //    linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("read more"),
-        //     linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"),
-        //     linkTo(methodOn(PostController.class).UnCreatelikePost(like.getLikeId())).withRel("delete your like"));
-        // //   }else{    return EntityModel.of(like,
-        // //     linkTo(methodOn(PostController.class).findById(post.getPostId())).withRel("the post "),
-        // //     linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("read more"),
-        // //     linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"));   
-        // //  }
+             if ( UserServiceFeignClient.getUserByUserId(like.getUserId()) ==UserServiceFeignClient.getUsersByUsername(username)){
+             return EntityModel.of(like,
+             linkTo(methodOn(PostController.class).findById(post.getPostId())).withRel("the post "),
+           // linkTo(methodOn(PostController.class).getAllPostLikes(like.getPostId())).withRel("the post's like"),
+           linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("read more"),
+            linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"),
+            linkTo(methodOn(PostController.class).UnCreatelikePost(like.getLikeId())).withRel("delete your like"));
+          }else{    return EntityModel.of(like,
+            linkTo(methodOn(PostController.class).findById(post.getPostId())).withRel("the post "),
+            linkTo(methodOn(PostController.class).getRandomLikes(post.getPostId())).withRel("read more"),
+            linkTo(methodOn(PostController.class).getAllPostComments(post.getPostId())).withRel("the post's comment"));   
+         }
       
             
           }
@@ -126,17 +124,21 @@ private boolean userHasPermissionToDeletePost(Long postId, Long userId) {
 
         public EntityModel<Share> toModelsharepostId(Share share)  {
              User user = userFromToken(request);
-    // if (user!=null){   
-        // if (UserServiceFeignClient.getUserByUserId(share.getUserId()).equals(user.getId())){
-           return EntityModel.of(share);
-      //      ,
-      //      linkTo(methodOn(PostController.class).findById(share.getPost().getPostId())).withRel("the post you shared"),
-      //     linkTo(methodOn(PostController.class).deleteShearById(share.getShareId())).withRel("delete your share post"));
-      
-      //  } return EntityModel.of(share,
-      //  linkTo(methodOn(PostController.class).findAllPost()).withRel("Go to the all post"));}
-    // }
-  }
+    if (user!=null){   
+        if (UserServiceFeignClient.getUserByUserId(share.getUserId()).equals(user.getId())){
+           return EntityModel.of(share,
+           linkTo(methodOn(PostController.class).findById(share.getPost().getPostId())).withRel("the post you shared"),
+          // linkTo(methodOn(PostController.class).getAllPostLikes(share.getPostId())).withRel("the post's like"),
+          // linkTo(methodOn(PostController.class).getAllPostComments(share.getPostId(),request)).withRel("the post's comment"),
+          linkTo(methodOn(PostController.class).deleteShearById(share.getShareId())).withRel("delete your share post"));
+        }else{    return EntityModel.of(share,
+                    linkTo(methodOn(PostController.class).findById(share.getPost().getPostId())).withRel("the post you shared"));
+                  //  linkTo(methodOn(PostController.class).getAllPostLikes(share.getPostId())).withRel("the post's like"),
+                  //  linkTo(methodOn(PostController.class).getAllPostComments(share.getPostId(),request)).withRel("the post's comment"));
+    
+       } } return EntityModel.of(share,
+       linkTo(methodOn(PostController.class).findAllPost()).withRel("Go to the all post"));}
+
 
 public User userFromToken(HttpServletRequest request){
   String jwt = parseJwt(request);
