@@ -5375,3 +5375,96 @@ Add a spring.config.import=configserver: property to your configuration.
 2024-06-07 16:38:11 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
 2024-06-07 16:38:11 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
 2024-06-07 16:42:41 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 17:33:50 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-07 18:09:53 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-07 18:09:53 INFO  c.f.u.UserserviceApplication - Starting UserserviceApplication using Java 21.0.2 with PID 21088 (C:\Users\fatim\Desktop\step3\project-step-3-al7komaaa\userservice\target\classes started by fatima in C:\Users\fatim\Desktop\step3\project-step-3-al7komaaa\userservice)
+2024-06-07 18:09:53 INFO  c.f.u.UserserviceApplication - The following 1 profile is active: "native"
+2024-06-07 18:09:53 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-06-07 18:09:53 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=userservice, profiles=[default], label=null, version=c0d218eb5d51a4b151e7883894e2fb4cd394ce22, state=null
+2024-06-07 18:09:53 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2024-06-07 18:09:53 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=userservice, profiles=[native], label=null, version=c0d218eb5d51a4b151e7883894e2fb4cd394ce22, state=null
+2024-06-07 18:09:53 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-07 18:09:53 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-07 18:09:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-07 18:10:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 871 ms. Found 2 JPA repository interfaces.
+2024-06-07 18:10:02 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=6462866a-9ce3-3781-83a3-0d5a4d60525e
+2024-06-07 18:10:03 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-07 18:10:03 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-06-07 18:10:06 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-06-07 18:10:06 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2024-06-07 18:10:06 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-07 18:10:06 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-07 18:10:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-07 18:10:07 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13550 ms
+2024-06-07 18:10:08 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-07 18:10:09 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.8.Final
+2024-06-07 18:10:09 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-07 18:10:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-07 18:10:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-07 18:10:11 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f556016
+2024-06-07 18:10:11 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-07 18:10:12 WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-06-07 18:10:12 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-07 18:10:17 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-07 18:10:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 18:10:19 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-07 18:10:23 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'userservice.app.jwtSecret' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:23 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'userservice.app.jwtExpirationMs' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:24 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.api-docs.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.api-docs.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.api-docs.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.api-docs.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.swagger-ui.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.swagger-ui.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:26 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'springdoc.api-docs.path' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:28 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-06-07 18:10:28 INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1af949d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ef0044a, org.springframework.security.web.context.SecurityContextHolderFilter@79aee8e, org.springframework.security.web.header.HeaderWriterFilter@3c858e14, org.springframework.web.filter.CorsFilter@2a784a0b, org.springframework.security.web.authentication.logout.LogoutFilter@6bbbdb28, com.fatima.userservice.Security.Jwt.AuthTokenFilter@47fedc14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cc8d80b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@671fa2ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12d8ca39, org.springframework.security.web.session.SessionManagementFilter@1c33420b, org.springframework.security.web.access.ExceptionTranslationFilter@64375392, org.springframework.security.web.access.intercept.AuthorizationFilter@26f70ce9]
+2024-06-07 18:10:33 WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-06-07 18:10:33 DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.application.name' in PropertySource 'environmentProperties' with value of type String
+2024-06-07 18:10:33 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-06-07 18:10:33 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-06-07 18:10:34 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-06-07 18:10:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-06-07 18:10:34 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-06-07 18:10:37 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-06-07 18:10:37 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-06-07 18:10:37 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-06-07 18:10:37 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1717773037828 with initial instances count: 0
+2024-06-07 18:10:37 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application USERSERVICE with eureka with status UP
+2024-06-07 18:10:37 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1717773037959, current=UP, previous=STARTING]
+2024-06-07 18:10:37 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_USERSERVICE/fatma:userservice:8081: registering service...
+2024-06-07 18:10:37 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2024-06-07 18:10:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2024-06-07 18:10:38 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
+2024-06-07 18:10:38 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_USERSERVICE/fatma:userservice:8081 - registration status: 204
+2024-06-07 18:10:38 INFO  c.f.u.UserserviceApplication - Started UserserviceApplication in 52.473 seconds (process running for 57.236)
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-06-07 18:11:07 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-06-07 18:15:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:20:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:25:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:30:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:32:57 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-07 18:32:57 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-07 18:32:57 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 32 ms
+2024-06-07 18:35:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:40:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:45:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:50:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 18:55:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 19:00:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 19:05:35 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
