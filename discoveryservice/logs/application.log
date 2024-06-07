@@ -7311,3 +7311,48 @@ java.lang.IllegalStateException: Client instance has been closed.
 2024-06-07 20:18:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
 2024-06-07 20:18:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
 2024-06-07 20:18:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2024-06-07 20:18:19 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:18:19 DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance fatma:userservice:8081
+2024-06-07 20:18:19 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:18:20 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:18:20 DEBUG c.n.e.r.r.AlwaysMatchInstanceStatusRule - Returning the default instance status UP for instance fatma:userservice:8081
+2024-06-07 20:18:20 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:18:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2024-06-07 20:18:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2024-06-07 20:18:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2024-06-07 20:18:42 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-06-07 20:18:42 DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2024-06-07 20:18:49 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:18:49 DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance fatma:userservice:8081
+2024-06-07 20:18:49 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:18:50 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:18:50 DEBUG c.n.e.r.r.AlwaysMatchInstanceStatusRule - Returning the default instance status UP for instance fatma:userservice:8081
+2024-06-07 20:18:50 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:19:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2024-06-07 20:19:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2024-06-07 20:19:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2024-06-07 20:19:00 DEBUG c.n.e.r.AbstractInstanceRegistry - Fetching applications registry with remote regions: false, Regions argument []
+2024-06-07 20:19:00 DEBUG c.n.e.registry.ResponseCacheImpl - New application cache entry {name=ALL_APPS, type=Application, format=JSON} with apps hashcode UP_1_
+2024-06-07 20:19:19 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:19:19 DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance fatma:userservice:8081
+2024-06-07 20:19:19 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:19:20 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:19:20 DEBUG c.n.e.r.r.AlwaysMatchInstanceStatusRule - Returning the default instance status UP for instance fatma:userservice:8081
+2024-06-07 20:19:20 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:19:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2024-06-07 20:19:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2024-06-07 20:19:30 DEBUG c.n.e.r.AbstractInstanceRegistry - The number of elements in the delta queue is : 0
+2024-06-07 20:19:30 DEBUG c.n.e.registry.ResponseCacheImpl - New application cache entry {name=ALL_APPS_DELTA, type=Application, format=JSON} with apps hashcode UP_1_
+2024-06-07 20:19:30 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
+2024-06-07 20:19:40 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 3
+2024-06-07 20:19:42 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-06-07 20:19:42 DEBUG c.n.e.r.AbstractInstanceRegistry - Running the evict task
+2024-06-07 20:19:49 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:19:49 DEBUG c.n.e.registry.rule.LeaseExistsRule - There is already an existing lease with status UP  for instance fatma:userservice:8081
+2024-06-07 20:19:49 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:19:50 DEBUG c.n.e.r.AbstractInstanceRegistry - Processing override status using rule: [com.netflix.eureka.registry.rule.DownOrStartingRule, com.netflix.eureka.registry.rule.OverrideExistsRule, com.netflix.eureka.registry.rule.LeaseExistsRule, com.netflix.eureka.registry.rule.AlwaysMatchInstanceStatusRule]
+2024-06-07 20:19:50 DEBUG c.n.e.r.r.AlwaysMatchInstanceStatusRule - Returning the default instance status UP for instance fatma:userservice:8081
+2024-06-07 20:19:50 DEBUG c.n.e.resources.InstanceResource - Found (Renew): USERSERVICE - fatma:userservice:8081; reply status=200
+2024-06-07 20:20:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache
+2024-06-07 20:20:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS_DELTA V2 JSON
+2024-06-07 20:20:00 DEBUG c.n.e.registry.ResponseCacheImpl - Updating the client cache from response cache for key : Application ALL_APPS V2 JSON
