@@ -5550,3 +5550,19 @@ Add a spring.config.import=configserver: property to your configuration.
 2024-06-07 19:36:16 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8081
 2024-06-07 19:36:16 INFO  c.f.u.UserserviceApplication - Started UserserviceApplication in 77.795 seconds (process running for 82.003)
 2024-06-07 19:36:16 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_USERSERVICE/fatma:userservice:8081 - registration status: 204
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-06-07 19:36:45 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-06-07 19:41:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 19:46:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 19:51:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 19:56:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 20:01:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 20:06:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 20:11:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-06-07 20:16:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
