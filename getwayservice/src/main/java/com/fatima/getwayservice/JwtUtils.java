@@ -1,11 +1,10 @@
-package com.fatima.gatewayservice;
+package com.fatima.getwayservice;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,13 +12,12 @@ import java.security.Key;
 import io.jsonwebtoken.security.Keys;
 
 @Component
-@Configuration
 public class JwtUtils {
 
-  @Value("${gatewayservice.app.jwtSecret}")
+  @Value("${getwayservice.app.jwtSecret}")
   private String jwtSecret;
 
-  @Value("${gatewayservice.app.jwtExpirationMs}")
+  @Value("${getwayservice.app.jwtExpirationMs}")
   private int jwtExpirationMs;
 
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);

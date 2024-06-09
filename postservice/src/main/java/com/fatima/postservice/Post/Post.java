@@ -1,7 +1,5 @@
 package com.fatima.postservice.Post;
-
 import java.util.List;
-import java.util.ArrayList;
 import com.fatima.postservice.Comment.Comment;
 import com.fatima.postservice.Like.Like;
 import com.fatima.postservice.Share.Share;
@@ -19,19 +17,20 @@ public class Post {
     private String video;
 
     @Column(columnDefinition = "TEXT")
-    private String content;
+private String content;
+
 
     @Column(name = "user_ID")
     private Long userId;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Comment> postComments = new ArrayList<>();
+    @OneToMany
+    public List<Comment> postComments;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Like> likes = new ArrayList<>();
+    @OneToMany
+    public List<Like> like;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Share> shares = new ArrayList<>();
+    @OneToMany
+    private List<Share> shares;
 
     private LocalDateTime timestamp;
 
@@ -52,6 +51,8 @@ public class Post {
     public void setPostId(Long postId) {
         this.postId = postId;
     }
+
+
 
     public String getImage() {
         return image;
@@ -93,12 +94,12 @@ public class Post {
         this.postComments = postComments;
     }
 
-    public List<Like> getLikes() {
-        return likes;
+    public List<Like> getLike() {
+        return like;
     }
 
-    public void setLikes(List<Like> likes) {
-        this.likes = likes;
+    public void setLike(List<Like> like) {
+        this.like = like;
     }
 
     public List<Share> getShares() {

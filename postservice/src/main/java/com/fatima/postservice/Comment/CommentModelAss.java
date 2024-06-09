@@ -12,7 +12,7 @@ import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-// import com.fatima.postservice.Controllers.PostController;
+import com.fatima.postservice.Controllers.PostController;
 import com.fatima.postservice.User;
 import com.fatima.postservice.UserServiceFeignClient;
 import com.fatima.postservice.JwtUtils;
@@ -38,24 +38,22 @@ String string;
 
     public EntityModel<Comment> commentDelEdit(Comment comment) {
         User user = userFromToken(request);
-        // if (UserServiceFeignClient.getUserByUserId(comment.getUserId()) == user) {
-            return EntityModel.of(comment
-            // ,
-                    // linkTo(methodOn(PostController.class).deleteComment(comment.getCommentId()))
-                    //         .withRel("delete comment"),
+        if (UserServiceFeignClient.getUserByUserId(comment.getUserId()) == user) {
+            return EntityModel.of(comment,
+                    linkTo(methodOn(PostController.class).deleteComment(comment.getCommentId()))
+                            .withRel("delete comment"),
 
-                    // linkTo(methodOn(PostController.class).editCoumment(comment.getCommentId(),string))
-                    //         .withRel("edit your comment ")
-                            );
+                    linkTo(methodOn(PostController.class).editCoumment(comment.getCommentId(),string))
+                            .withRel("edit your comment "));
                             //  linkTo(methodOn(PostController.class).findById(comment.getPost().getPostId()))
                             // .withRel("go to the post "));
-        // } else {
-        //     return EntityModel.of(comment,
+        } else {
+            return EntityModel.of(comment,
                   
-        //             linkTo(methodOn(PostController.class).findById(comment.getPost().getPostId()))
-        //                     .withRel("go to the post "));
+                    linkTo(methodOn(PostController.class).findById(comment.getPost().getPostId()))
+                            .withRel("go to the post "));
 
-        // }
+        }
     }
 
 

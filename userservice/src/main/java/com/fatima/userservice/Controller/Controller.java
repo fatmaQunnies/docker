@@ -58,7 +58,7 @@ import java.nio.file.Files;
 
 import java.nio.file.Paths;
 import java.util.UUID;
-@RequestMapping("/user")
+@RequestMapping("/users")
 
 @RestController
 public class Controller {
