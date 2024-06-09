@@ -74,6 +74,16 @@
             "projectName": "api-gateway",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayserviceApplication<getwayservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fatima.getwayservice.GatewayserviceApplication",
+            "projectName": "getwayservice",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
