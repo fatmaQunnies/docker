@@ -1,0 +1,138 @@
+version: '3.8'
+
+services:
+  userdatabase:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE: userdatabase
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+    volumes:
+      - userdatabase:/var/lib/mysql
+
+  # postdatabase:
+  #   image: mysql:8.0
+  #   restart: always
+  #   environment:
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+  #     MYSQL_DATABASE: postdatabase
+  #   ports:
+  #     - "3307:3306"  
+  #   networks:
+  #     - app-network
+  #   volumes:
+  #     - postdatabase:/var/lib/mysql
+
+  configserver:
+    build: ./configserver
+    image: fatmaqunnies/config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - app-network
+
+  discoveryservice:
+    build: ./discoveryservice
+    image: fatmaqunnies/discoveryservice
+    restart: always
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+    depends_on:
+      - configserver
+
+  gatewayservice:
+    build: ./gatewayservice
+    image: fatmaqunnies/getwayservice:latest
+    restart: always
+    ports:
+      - "8765:8765"
+    networks:
+      - app-network
+    depends_on:
+      - discoveryservice
+    environment:
+      - eureka.client.service-url.defaultZone=http://discoveryservice:8761/eureka
+      - eureka.instance.prefer-ip-address=true
+      - eureka.instance.hostname=localhost
+
+  userservice:
+    build:
+      context: ./userservice
+      dockerfile: Dockerfile
+    restart: always
+    image: fatmaqunnies/user-service:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+    depends_on:
+      - userdatabase
+      - discoveryservice
+      - gatewayservice
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://userdatabase:3306/userdatabase
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+      - eureka.client.service-url.defaultZone=http://discoveryservice:8761/eureka
+      - eureka.instance.prefer-ip-address=true
+      - eureka.instance.hostname=localhost
+
+  # postservice:
+  #   build:
+  #     context: ./postservice
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   image: fatmaqunnies/postservice
+  #   ports:
+  #     - "8082:8082"
+  #   networks:
+  #     - app-network
+  #   depends_on:
+  #     - postdatabase
+  #     - discoveryservice
+  #     - userservice
+  #     - gatewayservice
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:mysql://postdatabase:3306/postdatabase
+  #     - SPRING_DATASOURCE_USERNAME=root
+  #     - SPRING_DATASOURCE_PASSWORD=
+  #     - eureka.client.service-url.defaultZone=http://discoveryservice:8761/eureka
+  #     - eureka.instance.prefer-ip-address=true
+  #     - eureka.instance.hostname=localhost
+
+  searchservice:
+    build:
+      context: ./searchservice
+      dockerfile: Dockerfile
+    restart: always
+    image: fatmaqunnies/searchservice:latest
+    ports:
+      - "8083:8083"
+    networks:
+      - app-network
+    depends_on:
+      - userdatabase
+      - discoveryservice
+      - gatewayservice
+      - userservice
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://userdatabase:3306/userdatabase
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+      - eureka.client.service-url.defaultZone=http://discoveryservice:8761/eureka
+      - eureka.instance.prefer-ip-address=true
+      - eureka.instance.hostname=localhost
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  userdatabase:
+  postdatabase:

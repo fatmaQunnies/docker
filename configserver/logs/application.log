@@ -40,3 +40,8 @@
 2024-06-09 13:23:03 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-06-09 13:23:03 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-06-09 13:23:03 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-18 18:47:30 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-18 18:47:30 INFO  c.f.c.ConfigserverApplicationTests - Starting ConfigserverApplicationTests using Java 21.0.2 with PID 15272 (started by fatima in C:\Users\fatim\Desktop\docker1\project-step-3-al7komaaa\configserver)
+2024-06-18 18:47:30 INFO  c.f.c.ConfigserverApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 18:47:34 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=dc8dcdf2-9049-3d07-add6-fb460a23641e
+2024-06-18 18:47:37 INFO  c.f.c.ConfigserverApplicationTests - Started ConfigserverApplicationTests in 8.785 seconds (process running for 13.144)
