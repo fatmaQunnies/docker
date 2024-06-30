@@ -90,7 +90,7 @@ services:
   #   restart: always
   #   image: fatmaqunnies/postservice
   #   ports:
-  #     - "8082:8082"
+  #     - "8082:8082" 
   #   networks:
   #     - app-network
   #   depends_on:
